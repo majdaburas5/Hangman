@@ -1,13 +1,14 @@
 import React from "react";
+import Letter from "./Letter";
 
-export default function Solution() {
-  let spaces = [" _ ", " _ ", " _ ", " _ "];
-  let hint = "Your ideal mood when coding";
+export default function Solution({ letterStatus, solution }) {
+  let word = solution.word.split("");
+  let hint = solution.hint;
 
   return (
     <div>
-      {spaces.map((s) => (
-        <span>{s}</span>
+      {word.map((w) => (
+        <Letter letter={letterStatus[w] ? w : " _ "} />
       ))}
       <div>
         <em>{hint}</em>

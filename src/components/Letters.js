@@ -1,40 +1,18 @@
 import React from "react";
 import Letter from "./Letter";
 
-export default function Letters() {
-  let letters = [
-    " A ",
-    " B ",
-    " C ",
-    " D ",
-    " E ",
-    " F ",
-    " G ",
-    " H ",
-    " I ",
-    " J ",
-    " K ",
-    " L ",
-    " M ",
-    " N ",
-    " O ",
-    " P ",
-    " Q ",
-    " R ",
-    " S ",
-    " T ",
-    " U ",
-    " V ",
-    " W ",
-    " X ",
-    " Y ",
-    " Z ",
-  ];
+export default function Letters({ letterStatus, selctedLetter }) {
+  let letters = Object.keys(letterStatus);
+
   return (
     <div>
-      <Letter />
+      <div>Available Letters</div>
       {letters.map((l) => (
-        <span>{l}</span>
+        <Letter
+          letter={l}
+          letterClass={letterStatus[l] ? "line-through" : " "}
+          selctedLetter={selctedLetter}
+        />
       ))}
     </div>
   );

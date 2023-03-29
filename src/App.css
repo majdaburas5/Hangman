@@ -12,6 +12,26 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.guess-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.line-through {
+  text-decoration: line-through;
+}
+
+.high-score {
+  color: green;
+}
+
+.medium-score {
+  color: orange;
+}
+.low-score {
+  color: red;
+}
 
 .App-header {
   background-color: #282c34;

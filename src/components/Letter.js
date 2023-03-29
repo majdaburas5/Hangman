@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Letter() {
-  let letter = "A";
+export default function Letter({ letter, letterClass, selctedLetter }) {
+  const [click, setClick] = useState(false);
+  const checkIfClicked = () => {
+    if (click == false) {
+      setClick(true);
+      selctedLetter(letter);
+    }
+  };
   return (
-    <div>
-      <div>Available Letters</div>
-      <span>{letter}</span>
-    </div>
+    <span className={letterClass} onClick={checkIfClicked}>
+      {letter + " "}
+    </span>
   );
 }
